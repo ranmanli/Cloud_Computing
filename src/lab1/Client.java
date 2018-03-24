@@ -3,6 +3,7 @@ package lab1;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Client {
@@ -36,7 +37,7 @@ public class Client {
 			String newUsername = input.nextLine();
 			System.out.println("Please input an password ");
 			String newPassword = input.nextLine();
-			String result = "sorry, please try again";
+			Map result = null;
 			try {
 				result = stubRegister.registerNewUser(newUsername, newPassword);
 			} catch (RemoteException e) {
